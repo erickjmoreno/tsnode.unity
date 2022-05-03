@@ -6,7 +6,7 @@ import { Person } from './types';
 import { guildName } from '@configs/env';
 
 const limit = pLimit(5);
-const rosterRef = firestore.collection(guildName).doc('roster');
+export const rosterRef = firestore.collection(guildName).doc('roster');
 
 export const updatePerson = async (person: Person) => {
   const characters = await Promise.all(person.characters.map((char) => getCharacterData(char)));

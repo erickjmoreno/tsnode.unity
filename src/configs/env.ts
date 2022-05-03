@@ -4,7 +4,7 @@ dotenv.config();
 
 export const token = process.env.DISCORD_TOKEN;
 export const prefix = process.env.PREFIX;
-export const channelId = process.env.CHANNEL_ID;
+export const channelId = process.env.CHANNEL_ID || '';
 export const clientID = process.env.CLIENT_ID;
 export const clientSecret = process.env.CLIENT_SECRET;
 export const auctionChannelId = process.env.AUCTION_CHANNEL_ID;
