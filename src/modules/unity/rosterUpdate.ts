@@ -24,7 +24,6 @@ export const updateCore = async () => {
   const rosterData = rosterDocuments.data();
 
   const core1 = await updateRoster(rosterData?.core1 as Person[]);
-  console.log(core1);
 
   const updatedRosterData = {
     ...rosterData,

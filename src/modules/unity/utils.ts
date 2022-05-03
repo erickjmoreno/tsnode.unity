@@ -40,17 +40,12 @@ export async function getIconFromUrl(url: string) {
 
   const { data: characterIconData } = await axios.get(url + accessTokenString);
 
-  try {
-    if (characterIconData && characterIconData.hasOwnProperty('assets')) {
-      const { value = '' } =
-        characterIconData?.assets?.find((data: { key: string }) => data.key === 'avatar') || {};
+  if (characterIconData && characterIconData.hasOwnProperty('assets')) {
+    const { value = '' } =
+      characterIconData?.assets?.find((data: { key: string }) => data.key === 'avatar') || {};
 
-      return value;
-    }
-
-    return characterIconData?.avatar_url || '';
-  } catch (error) {
-    console.log(error);
-    throw error;
+    return value;
   }
+
+  return characterIconData?.avatar_url || '';
 }
