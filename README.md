@@ -8,7 +8,7 @@ Prettier
 Jest
 
 # Installation 
-Clone the repository using https://github.com/erickjmoreno/tsnode.boilerplate/generate to generate your own repo based on this template.
-Do NVM use to switch to node version used here
-After cloning do a npm install
-Update this readme with your project information
+
+For this Service to work we require redis installation.
+https://redis.io/docs/getting-started/
+

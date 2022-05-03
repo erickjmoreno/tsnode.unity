@@ -12,3 +12,6 @@ export const serverId = process.env.SERVER_ID;
 export const accountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
 export const accountPrivateKey = process.env.GOOGLE_PRIVATE_KEY;
 export const spreadsheetID = process.env.GOOGLE_SPREADSHEET;
+export const redisHost = process.env.REDIS_HOST || 'localhost';
+export const redisPort = process.env.REDIS_PORT || 6379;
+export const redisPassword = process.env.REDIS_PASSWORD;
