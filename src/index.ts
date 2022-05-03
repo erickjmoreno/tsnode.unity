@@ -1,3 +1,7 @@
-import { test } from './mock';
+import { updateCore } from '@modules/unity/rosterUpdate';
 
-test();
+const init = async () => {
+  await updateCore();
+};
+
+init();
