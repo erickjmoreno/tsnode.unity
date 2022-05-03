@@ -1,10 +1,12 @@
 import pLimit from 'p-limit';
 import getAccessToken from '@modules/battleNet/getAccessToken';
-import { rosterRef } from '@modules/firebase';
+import { firestore } from '@modules/firebase';
 import getCharacterData from './characterUpdate';
 import { Person } from './types';
+import { guildName } from '@configs/env';
 
 const limit = pLimit(5);
+const rosterRef = firestore.collection(guildName).doc('roster');
 
 export const updatePerson = async (person: Person) => {
   const characters = await Promise.all(person.characters.map((char) => getCharacterData(char)));

@@ -6,6 +6,4 @@ const app = initializeApp({
   credential: cert(serviceAccount as ServiceAccount),
 });
 
-const firestore = getFirestore(app);
-
-export const rosterRef = firestore.collection('Unity').doc('roster');
+export const firestore = getFirestore(app);

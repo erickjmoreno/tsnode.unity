@@ -15,3 +15,4 @@ export const spreadsheetID = process.env.GOOGLE_SPREADSHEET;
 export const redisHost = process.env.REDIS_HOST || 'localhost';
 export const redisPort = process.env.REDIS_PORT || 6379;
 export const redisPassword = process.env.REDIS_PASSWORD;
+export const guildName = process.env.GUILD_NAME || 'Unity';
