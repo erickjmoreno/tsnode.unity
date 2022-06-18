@@ -16,3 +16,7 @@ export const redisHost = process.env.REDIS_HOST || 'localhost';
 export const redisPort = process.env.REDIS_PORT || 6379;
 export const redisPassword = process.env.REDIS_PASSWORD;
 export const guildName = process.env.GUILD_NAME || 'Unity';
+export const emailUsername = process.env.UNITY_EMAIL_USERNAME || '';
+export const emailPassword = process.env.UNITY_EMAIL_PASSWORD || '';
+export const core1Emails = process.env.UNITY_EMAIL_CORE1 || '';
+export const core2Emails = process.env.UNITY_EMAIL_CORE2 || '';

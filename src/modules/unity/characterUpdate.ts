@@ -1,6 +1,6 @@
 import blizzApi from '@modules/battleNet/api';
 import { apiUrl } from '@constants/.';
-import { Character } from './types';
+import type { Character } from './types';
 import { findAchievement, sortMythicPlusByHigher, getIconFromUrl } from './utils';
 
 const getCharacterData = async (data: Character): Promise<Character> => {

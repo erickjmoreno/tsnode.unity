@@ -1,8 +1,9 @@
 import { format } from 'date-fns';
-import { Message, Client, TextChannel } from 'discord.js';
+import type { Client } from 'discord.js';
+// import { Message, TextChannel } from 'discord.js';
+import { table } from 'table';
 import { rosterRef } from '@modules/unity/rosterUpdate';
 import { sortByNameWithRankOrder, mapRosterData, tableConfig } from './utils';
-import { table } from 'table';
 
 const size = 10;
 const charParams = ['Personaje', 'ilvl', 'Repu', 'M+ Total', 'Highest', 'Leggo'];
