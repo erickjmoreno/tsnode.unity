@@ -19,10 +19,13 @@ const handleEmailListener: HandleEmailListener = (args) => async (snapShot) => {
       apply.answersSent !== apply.answer?.length;
 
     if (hasMissingResponses) {
-      const { answersCount, email } = getResponseEmail({
-        apply: apply as ApplyWithAnswer,
-        emailTransporter,
-      });
+      const { answersCount, email } =
+        getResponseEmail({
+          apply: apply as ApplyWithAnswer,
+          emailTransporter,
+        }) ?? {};
+
+      if (!answersCount || !email) return;
       answersSentById.push([change.doc.id, answersCount]);
       responseEmails.push(email);
     }

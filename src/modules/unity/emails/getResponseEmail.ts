@@ -2,7 +2,9 @@ import { TEXT_SIGNATURE, FROM, HTML_SIGNATURE } from '@constants/mail';
 import type { HandleResponseEmailsArgs } from './types';
 
 const getResponseEmail = ({ apply, emailTransporter }: HandleResponseEmailsArgs) => {
-  const mail = apply.questions[3].answer;
+  const mail = apply.questions.find(({ officerString }) => officerString === 'Mail')?.answer ?? '';
+  if (!mail) return;
+
   const answersAlreadySentCount = apply.answersSent || 0;
   const answersCount = apply.answer.length || 0;
   const startingPoint = answersAlreadySentCount - answersCount;
