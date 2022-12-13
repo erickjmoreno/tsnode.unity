@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ path: '../.env' });
 
 export const token = process.env.DISCORD_TOKEN;
 export const prefix = process.env.PREFIX;

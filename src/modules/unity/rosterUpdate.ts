@@ -1,9 +1,10 @@
 import pLimit from 'p-limit';
 import getAccessToken from '@modules/battleNet/getAccessToken';
 import { firestore } from '@modules/firebase';
-import getCharacterData from './characterUpdate';
-import { Person } from './types';
 import { guildName } from '@configs/env';
+import createNewJob from '@modules/cron';
+import getCharacterData from './characterUpdate';
+import type { Person } from './types';
 
 const limit = pLimit(5);
 export const rosterRef = firestore.collection(guildName).doc('roster');
@@ -20,7 +21,7 @@ export const updateRoster = async (roster: Person[]) => {
   return core;
 };
 
-export const updateCore = async () => {
+const updateCoreInfo = async () => {
   await getAccessToken();
   const rosterDocuments = await rosterRef.get();
   const rosterData = rosterDocuments.data();
@@ -33,4 +34,9 @@ export const updateCore = async () => {
   };
 
   return rosterRef.update(updatedRosterData);
+};
+
+export const updateCore = async () => {
+  // updateCoreInfo();
+  createNewJob(updateCoreInfo);
 };

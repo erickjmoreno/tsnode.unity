@@ -13,7 +13,8 @@ export const sortByNameWithRankOrder = (a: Person, b: Person) => {
   return 0;
 };
 
-const placeHolder = ['Placeholder', '-', '-', '-', '-', '-'];
+const placeHolder = ['Placeholder', '-', '-', '-'];
+
 export const getCharacterData = (data: Character): (string | number)[] => {
   if (!data) return placeHolder;
   const {
@@ -22,11 +23,11 @@ export const getCharacterData = (data: Character): (string | number)[] => {
     mythicweeklylvl = '',
     name,
     error = false,
-    legendary = '',
-    reputation = '',
+    // legendary = '',
+    // reputation = '',
   } = data;
   const nameWithHandler = error ? `*${name}` : name;
-  const payload = [nameWithHandler, ilevel, reputation, mythicRuns, mythicweeklylvl, legendary];
+  const payload = [nameWithHandler, ilevel, mythicRuns, mythicweeklylvl];
 
   return payload;
 };
@@ -46,7 +47,6 @@ export const tableConfig = {
   columnDefault: {
     width: 12,
   },
-  columnCount: 12,
   singleLine: true,
   columns: {
     0: {
@@ -56,34 +56,22 @@ export const tableConfig = {
       width: 10,
     },
     3: {
-      width: 4,
+      width: 8,
+    },
+    7: {
+      width: 8,
     },
     4: {
-      width: 6,
+      width: 8,
+    },
+    8: {
+      width: 8,
     },
     5: {
       width: 8,
     },
-    6: {
-      width: 8,
-    },
-    7: {
-      width: 6,
-    },
     9: {
-      width: 4,
-    },
-    10: {
-      width: 6,
-    },
-    11: {
       width: 8,
-    },
-    12: {
-      width: 8,
-    },
-    13: {
-      width: 6,
     },
   },
 };

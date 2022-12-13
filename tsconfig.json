@@ -6,7 +6,7 @@
     "useDefineForClassFields": true,
 		"allowJs": false,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
 		"baseUrl": ".",
     "paths": {
       "@configs/*": ["src/configs/*"],
@@ -36,5 +36,8 @@
     }
 	},
   "include": ["src", "__mocks__"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "tsc-alias": {
+    "resolveFullPaths": true,
+  }
 }

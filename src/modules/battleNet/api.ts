@@ -11,7 +11,7 @@ api.interceptors.request.use(async (config) => {
   if (!character || !realm) throw new Error('missing Character name or realm');
 
   const accessToken = await getAccessToken();
-  config.url = `${bnetApiBaseUrl}/${character.toLowerCase()}/${realm.toLowerCase()}/${config.url}`;
+  config.url = `${bnetApiBaseUrl}/${realm.toLowerCase()}/${character.toLowerCase()}${config.url}`;
   config.url += `?namespace=profile-us&locale=en_US&access_token=${accessToken}`;
 
   return config;
